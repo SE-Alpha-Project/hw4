@@ -1,0 +1,34 @@
+name: Bash Shell Application
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install shellcheck
+      run: sudo apt-get install -y shellcheck
+
+    - name: Lint shell scripts
+      run: |
+        # Check all .sh files for syntax errors
+        shellcheck *.sh
+        
+    - name: Run shell scripts
+      run: |
+        # Run your bash scripts here. 
+        bash task2.sh
+        bash task3.sh
+        bash task1.sh
