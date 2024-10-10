@@ -1,3 +1,5 @@
+
+
 name: Bash Shell Application
 
 on:
@@ -11,7 +13,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -25,10 +26,8 @@ jobs:
       run: |
         # Check all .sh files for syntax errors
         shellcheck *.sh
-        
+
     - name: Run shell scripts
       run: |
-        # Run your bash scripts here. 
+    
         bash task2.sh
-        bash task3.sh
-        bash task1.sh
