@@ -29,5 +29,6 @@ jobs:
 
     - name: Run shell scripts
       run: |
-    
+        bash task1.sh
         bash task2.sh
+        bash task3.sh
